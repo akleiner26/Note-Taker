@@ -13,11 +13,11 @@ app.use(express.static("public"));
 ////////////////////////////////////////////
 //Routes
 app.get("/notes", function(req, res){
-    return res.sendFile(path.join(__dirname + '/notes.html'));
+    return res.sendFile(path.join(__dirname + '/public/notes.html'));
 })
 
-app.get("/", function (req, res){
-    return res.sendFile(path.join(__dirname + '/index.html'));
+app.get("*", function (req, res){
+    return res.sendFile(path.join(__dirname + 'public/notes/index.html'));
 })
 ////////////////////////////////////////////
 // Server Listen Function
